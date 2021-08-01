@@ -1,0 +1,169 @@
+/*=========== GOOGLE FONTS ==========*/
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+
+/*=========== VARIABLES CSS ==========*/
+:root {
+  /*=========== COLORS ==========*/
+  --background-color: #181824;
+  --text-color: #fff;
+  --todo-box-color: #24273d;
+  --red: #f00000;
+  --green: #008000;
+
+  /*=========== FONTS AND TYPOGRAPHY ==========*/
+  --body-font: "Open Sans", sans-serif;
+}
+
+/*=========== BASE ==========*/
+* {
+  box-sizing: border-box;
+}
+
+body {
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  display: flex;
+  font-family: var(--body-font);
+  background: var(--background-color) url("../images/bg-desktop-dark.jpg")
+    no-repeat center center/cover;
+  color: #fff;
+  overflow: hidden;
+  flex-direction: column;
+}
+/*=========== CHANGE THEME ==========*/
+
+body.dark {
+  background: #fff url("../images/bg-desktop-light.jpg") no-repeat center
+    center/cover;
+}
+.change-theme i {
+  cursor: pointer;
+  position: relative;
+  bottom: 55px;
+  left: 260px;
+  margin: 10px;
+}
+/*=========== TODO LIST STYLE ==========*/
+
+.form-container input {
+  background-color: var(--todo-box-color);
+  color: #fff;
+  padding: 20px;
+  width: 700px;
+  border: none;
+  border-radius: 15px;
+  margin-bottom: 30px;
+}
+input {
+  outline: none;
+}
+
+.form-container button {
+  background-color: var(--todo-box-color);
+  color: #fff;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  border: none;
+  cursor: pointer;
+}
+.todo-container {
+  background-color: var(--todo-box-color);
+  color: #fff;
+  border-radius: 20px;
+  padding: 20px;
+  width: 94%;
+}
+.todo-container button {
+  background-color: var(--todo-box-color);
+  color: #fff;
+  border: none;
+}
+.todo-item-checked {
+  text-decoration: line-through;
+  text-decoration-color: var(--red);
+  opacity: 0.7;
+}
+.form-alert {
+  border: var(--red) 1px;
+}
+.alert-text {
+  color: var(--red);
+  font-size: 20px;
+  display: none;
+  margin: 0;
+  padding: 0;
+}
+#delete-btn:hover {
+  background: var(--red);
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+}
+#checked-btn:hover {
+  background: var(--green);
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+}
+.fa-trash-alt,
+.fa-clipboard-check {
+  pointer-events: none;
+}
+.fall {
+  opacity: 0;
+  transform: scale(0.5);
+}
+
+@media (max-width: 380px) {
+  body {
+    background: var(--background-color) url("../images/bg-mobile-dark.jpg")
+      no-repeat center center/cover;
+  }
+  body[theme="dark"] {
+    background: #fff url("../images/bg-mobile-light.jpg") no-repeat center
+      center/cover;
+  }
+  .form-container button {
+    display: none;
+  }
+  .form-container input {
+    width: 100%;
+  }
+  .todo-container {
+    width: 100%;
+  }
+  .change-theme i {
+    position: relative;
+    bottom: 20px;
+    left: 0;
+    margin: 10px;
+  }
+}
+
+@media (max-width: 600px) {
+  body {
+    background: var(--background-color) url("../images/bg-mobile-dark.jpg")
+      no-repeat center center/cover;
+  }
+  body[theme="dark"] {
+    background: #fff url("../images/bg-mobile-light.jpg") no-repeat center
+      center/cover;
+  }
+  .form-container button {
+    display: none;
+  }
+  .form-container input {
+    width: 100%;
+  }
+  .todo-container {
+    width: 100%;
+  }
+  .change-theme i {
+    position: relative;
+    bottom: 20px;
+    left: 0;
+    margin: 10px;
+  }
+}
